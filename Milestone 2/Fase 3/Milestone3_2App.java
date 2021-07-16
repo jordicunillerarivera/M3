@@ -7,6 +7,7 @@ public class Milestone3_2App {
 
 		Llicencia llicencia = new Llicencia(1, "camio", "Izan Abad Sanchez", "03/12/2029");
 
+		@SuppressWarnings("unused")
 		Titular titular = new Titular("Izan", "Abad Sanchez", "3/12/2001", llicencia, true, false);
 
 		String eleccio = "";
@@ -75,6 +76,7 @@ public class Milestone3_2App {
 
 	}
 
+	@SuppressWarnings("unused")
 	public static void seleccioVehicle(String eleccio) {
 
 		eleccio = eleccio.toLowerCase();

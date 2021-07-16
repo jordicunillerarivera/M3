@@ -6,7 +6,7 @@ public class Milestone3_2App {
 	public static void main(String[] args) {
 		
 		
-		String eleccio = JOptionPane.showInputDialog("Introdueix el tipus de vehicle que tens (Cotxe/Moto");
+		String eleccio = JOptionPane.showInputDialog("Introdueix el tipus de vehicle que tens (Cotxe/Moto/Camio)");
 		
 		seleccioVehicle(eleccio);
 		
