@@ -35,10 +35,6 @@ public class Milestone3_1App {
 			
 			Moto moto = new Moto(matricula, marca, color);
 			return moto;
-		}else if(eleccio.equals("camio")) {
-			
-			Camio camio = new Camio(matricula, marca, color);
-			return camio;
 		}
 		return null;
 		
@@ -68,9 +64,6 @@ public class Milestone3_1App {
 		}else if(vehicle instanceof Moto) {
 			((Moto) vehicle).setRodesPosteriors(rodesPosteriors);
 			((Moto) vehicle).setRodesDavanteres(rodesDavanteres);
-		}else if(vehicle instanceof Camio) {
-			((Camio) vehicle).setRodesPosteriors(rodesPosteriors);
-			((Camio) vehicle).setRodesDavanteres(rodesDavanteres);
 		}
 		
 	}
@@ -91,12 +84,6 @@ public class Milestone3_1App {
 			afegirRodes(cotxe);
 			
 			System.out.println(cotxe.toString());
-			break;
-		case"camio":
-			Camio camio = (Camio) crearVehiculo(eleccio);
-			afegirRodes(camio);
-			
-			System.out.println(camio.toString());
 			break;
 			
 		
