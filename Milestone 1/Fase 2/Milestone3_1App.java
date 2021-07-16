@@ -5,14 +5,14 @@ public class Milestone3_1App {
 
 	public static void main(String[] args) {
 		
+		Cotxe cotxe = crearCotxe();
+		afegirRodes(cotxe);
 		
-		String eleccio = JOptionPane.showInputDialog("Introdueix el tipus de vehicle que tens (Cotxe/Moto");
-		
-		seleccioVehicle(eleccio);
+		System.out.println(cotxe.toString());
 
 	}
 	
-	public static Object crearVehiculo(String eleccio) {
+	public static Cotxe crearCotxe() {
 		
 		// Demanar a l’usuari la matrícula del cotxe, la marca i el seu color.
 		
@@ -22,22 +22,13 @@ public class Milestone3_1App {
 		
 		// Crear el cotxe amb les dades anteriors.
 		
-		if(eleccio.equals("cotxe")) {
-			
-			Cotxe cotxe = new Cotxe(matricula, marca, color);
-			return cotxe;
-		}else if(eleccio.equals("moto")) {
-			
-			Moto moto = new Moto(matricula, marca, color);
-			return moto;
-		}
-		return null;
+		Cotxe cotxe = new Cotxe(matricula, marca, color);
 		
-		
+		return cotxe;
 		
 	}
 	
-	public static void afegirRodes(Object vehicle) {
+	public static void afegirRodes(Cotxe cotxe) {
 		
 		// Afegir-li dues rodes traseres demanant a l’usuari la marca i el diametre.
 		
@@ -53,37 +44,8 @@ public class Milestone3_1App {
 		
 		Rodes rodesDavanteres = new Rodes(marcaRodesDavanteres, diametreRodesDavanteres);
 		
-		if(vehicle instanceof Cotxe) {
-			((Cotxe) vehicle).setRodesPosteriors(rodesPosteriors);
-			((Cotxe) vehicle).setRodesDavanteres(rodesDavanteres);
-		}else if(vehicle instanceof Moto) {
-			((Moto) vehicle).setRodesPosteriors(rodesPosteriors);
-			((Moto) vehicle).setRodesDavanteres(rodesDavanteres);
-		}
-		
-	}
-	public static void seleccioVehicle(String eleccio) {
-		
-		eleccio = eleccio.toLowerCase();
-		
-		switch(eleccio) {
-		
-		case"moto":
-			Moto moto = (Moto) crearVehiculo(eleccio);
-			afegirRodes(moto);
-			
-			System.out.println(moto.toString());
-			break;
-		case"cotxe":
-			Cotxe cotxe = (Cotxe) crearVehiculo(eleccio);
-			afegirRodes(cotxe);
-			
-			System.out.println(cotxe.toString());
-			break;
-			
-		
-		}
-		
+		cotxe.setRodesPosteriors(rodesPosteriors);
+		cotxe.setRodesDavanteres(rodesDavanteres);
 		
 	}
 
