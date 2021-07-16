@@ -14,7 +14,7 @@ public class Cotxe {
 
 	public Cotxe(String matricula, String marca, String color) {
 
-		this.matricula = comprMatricula();
+		this.matricula = comprMatricula(matricula);
 		this.marca = marca;
 		this.color = color;
 
@@ -25,56 +25,56 @@ public class Cotxe {
 	@Override
 	public String toString() {
 		return "Cotxe [matricula=" + matricula + ", marca=" + marca + ", color=" + color + "]" + "\nrodesDavanteres "
-				+ rodesDavanteres.toString() + "\nrodesPosteriors " + rodesPosteriors.toString() + " ]";
+				+ rodesDavanteres.toString() + "\nrodesPosteriors " + rodesPosteriors.toString();
 	}
 
-	public String comprMatricula() {
+		// Metode per a comprovar que la matricula sigue correcta
+	public String comprMatricula(String matricula) {
 
 		String matBuffer = "";
-		int length = this.matricula.length();
+		int length = matricula.length();
 
 		final String diccionariNum = "1234567890";
 		final String diccionariLlet = "BCDFGHJKLMNPRSTVWXYZ";
 
-		for (int i = 0; i < length; i++) {
-
-			if (i >= 0 && i <= 3) {
-
-				for (int e = 0; e < diccionariNum.length(); e++) {
-
-					if (matricula.charAt(i) == diccionariNum.charAt(e)) {
-
-						matBuffer += matricula.charAt(i);
-
-					} else {
-
-						matBuffer = "Matrícula errónea";
-					}
-					
-				}
-
-			} else if (i >= 4 && i <= 6) {
-
-				for (int e = 0; e < diccionariLlet.length(); e++) {
-
-					if (matricula.charAt(i) == diccionariLlet.charAt(e)) {
-
-						matBuffer += matricula.charAt(i);
-
-					} else if (matricula.charAt(i) != diccionariLlet.charAt(e)) {
-
-						matBuffer = "Matrícula errónea";
-
-					}
-
-				}
-
-			}
+		if (length >= 7) {
 			
+			for (int i = 0; i < length; i++) {
+	
+				if (i >= 0 && i <= 3) {
+	
+					for (int e = 0; e < diccionariNum.length(); e++) {
+	
+						if (matricula.charAt(i) == diccionariNum.charAt(e)) {
+	
+							matBuffer += matricula.charAt(i);
+	
+						} else {
+	
+							matBuffer = "Matrícula errónea";
+						}
+					}
+	
+				} else if (i >= 4 && i <= 6) {
+	
+					for (int e = 0; e < diccionariLlet.length(); e++) {
+	
+						if (matricula.charAt(i) == diccionariLlet.charAt(e)) {
+	
+							matBuffer += matricula.charAt(i);
+	
+						} else if (matricula.charAt(i) != diccionariLlet.charAt(e)) {
+	
+							matBuffer = "Matrícula errónea";
+						}
+					}
+				}
+			}
+		} else {
+			matBuffer = "Matrícula errónea";
 		}
 
 		return matBuffer;
-
 	}
 
 	// Setters i Getters
