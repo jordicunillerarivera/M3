@@ -1,7 +1,7 @@
 import javax.swing.JOptionPane;
 import Objetos.*;
 
-public class Milestone3_1App {
+public class Milestone3_2App {
 
 	public static void main(String[] args) {
 		
