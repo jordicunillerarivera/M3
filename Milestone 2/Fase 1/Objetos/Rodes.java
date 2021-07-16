@@ -6,15 +6,25 @@ public class Rodes {
 	private String marcaRodes;
 	private double diametreRodes;
 	
+	private final double DIAMETRERODES=2;
+	
 	public Rodes(String marcaRodes, double diametreRodes) {
 		
 		this.marcaRodes = marcaRodes;
-		this.diametreRodes = diametreRodes;
+		this.diametreRodes = comprovarDiametre(diametreRodes);
 		
 	}
 	
 	// Metodes
-	
+	public double comprovarDiametre(double diametre) {
+		
+		if (diametre >=0.4 && diametre <= 4) {
+			return diametre;
+		} else {
+			return this.DIAMETRERODES;
+		}
+		
+	}
 	@Override
 	public String toString() {
 		return "Rodes [marcaRodes=" + marcaRodes + ", diametreRodes=" + diametreRodes + "]";
